@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <!-- Add Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background: #fff;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+        .hero {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .btn-custom {
+            background-color: #e65c23;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #d04c1a;
+        }
+        .toggle-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+        }
+        
+        /* Dark Mode */
+        .dark-mode {
+            background: #121212;
+            color: #fff;
+        }
+        .dark-mode .about-me-container {
+            background: #222;
+            color: #ddd;
+        }
+        .dark-mode .naruto-quote {
+            color: #ffc107 !important;
+        }
+
+        /* About Me Section */
+        .about-me-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .naruto-quote {
+            font-style: italic;
+            color: #6c757d;
+        }
+
+        /* Background animation */
+        .particle {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        /* Skill Boxes */
+        .skill-box {
+            padding: 15px;
+            margin: 10px;
+            font-size: 50px;
+            text-align: center;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .skill-box:hover {
+            transform: scale(1.1);
+            background: #e65c23;
+            color: white;
+        }
+
+        /* Projects Section */
+        .projects-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e65c23;
+            margin-bottom: 30px;
+            text-decoration: underline;
+        }
+        .project-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: scale(1.02);
+            box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e65c23;
+        }
+        .tech-stack {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .touch-container {
+            max-width: 700px;
+        }
+        h2 {
+            text-align: center;
+            font-weight: 600;
+            color: #e65a14;
+        }
+        .orange-underline {
+            height: 3px;
+            background-color: #e65a14;
+            width: 100px;
+            margin: 10px auto;
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: #f26a25;
+            border-color: #f26a25;
+            transition: transform 0.2s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #e65a14;
+            border-color: #e65a14;
+            transform: scale(1.05);
+        }
+        .contact-info {
+            text-align: center;
+            font-size: 1rem;
+        }
+        .social-links a {
+            margin: 0 8px;
+            font-size: 30px;
+            color: #e96224;
+            transition: color 0.3s ease;
+
+        }
+        .social-links a:hover {
+            color: #f26a25;
+        }     
+
+    </style>
+</head>
+<body>
+
+<!-- Toggle switch -->
+<div class="toggle-switch">
+    <input type="checkbox" class="btn-check" id="darkModeToggle">
+    <label class="btn btn-outline-warning" for="darkModeToggle">🌙</label>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>I'm <span class="fw-bold">Jaidev Kamboj</span></h1>
+    <p>and this is my portfolio...</p>
+    <a href="#" class="btn btn-custom">Checkout Portfolio 👁️</a>
+</div>
+
+<!-- About Me Section -->
+<div class="container py-5">
+    <div class="row align-items-center">
+        <!-- Profile Image Column -->
+        <div class="col-lg-5 text-center">
+            <img src="photo.jpg" alt="Jaidev Kamboj" class="img-fluid shadow-lg"
+                 style="width: 100%; max-width: 450px; height: auto; object-fit: contain;">
+        </div>
+
+        <!-- Text Content Column -->
+        <div class="col-lg-7">
+            <div class="about-me-container">
+                <h1 class="fw-bold mb-3">About Me</h1>
+                <p class="lead">
+                    I enjoy creating beautifully designed, intuitive, and functional websites.
+                    I am a Canadian-based self-taught Web Developer and Software Engineer.
+                    Focused on crafting great web experiences and motivated to change the world for better.
+                    Coding and Designing have been my passion since the days I started working with
+                    computers, and I have a never-give-up attitude inspired by the tale of Naruto Uzumaki.
+                </p>
+                <blockquote class="blockquote naruto-quote mt-3">
+                    <p class="mb-0 fst-italic">"I never give up attitude inspired from the tale of Naruto Uzumaki."</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Skills Section -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 skill-box"><i class="bi bi-filetype-html"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-filetype-css"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-filetype-js"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-lightning"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-bootstrap"></i></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 skill-box"><i class="bi bi-palette"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-cup-hot"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-server"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-box"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-github"></i></div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-2 skill-box"><i class="bi bi-credit-card"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-cloud-upload"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-cloud"></i></div>
+        <div class="col-md-2 skill-box"><i class="bi bi-bootstrap"></i></div>
+    </div>
+</div>
+
+<!-- Projects Section -->
+<div class="container py-5">
+    <h2 class="projects-heading">Projects</h2>
+    <div class="row g-4">
+        <!-- Ecommerce Project -->
+        <div class="col-md-6">
+            <div class="card project-card">
+                <img src="photo-2.png" alt="Ecommerce Project">
+                <div class="card-body">
+                    <h5 class="project-title">Ecommerce Project</h5>
+                    <p class="tech-stack">HTML, CSS, JS, React, Redux, Firebase, Stripe, Firestore, Redux-thunk, Redux-saga, Heroku</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Facial Recognition Project -->
+        <div class="col-md-6">
+            <div class="card project-card">
+                <img src="photo-1.png" alt="Facial Recognition Project">
+                <div class="card-body">
+                    <h5 class="project-title">Facial Recognition Project</h5>
+                    <p class="tech-stack">HTML, CSS, JS, React, PostgreSQL, Heroku, ExpressJS, NodeJS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Project Link -->
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <a href="https://www.theonlinemc" target="_blank" class="btn btn-primary">Visit Website</a>
+        </div>
+    </div>
+</div>
+
+<!-- Miscellaneous Section -->
+<div class="container py-5">
+    <h2 class="projects-heading py-4">Miscellaneous</h2>
+    <div class="row g-4">
+        <!-- Background Generator -->
+        <div class="col-md-6">
+            <div class="card project-card">
+                <img src="photo-2.png" alt="Background Generator">
+                <div class="card-body">
+                    <h5 class="project-title">Background Generator</h5>
+                    <p class="tech-stack">HTML, CSS, JS</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz for HCE 4.0 -->
+        <div class="col-md-6">
+            <div class="card project-card">
+                <img src="photo-1.png" alt="Quiz for HCE 4.0">
+                <div class="card-body">
+                    <h5 class="project-title">Quiz for HCE 4.0</h5>
+                    <p class="tech-stack">HTML, CSS, JS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="touch-container"></div>
+    <h2>Get in Touch</h2>
+    <div class="orange-underline"></div>
+
+    <div class="row">
+        <!-- Form Column -->
+        <div class="col-12 col-md-6">
+            <div class="d-flex justify-content-center">
+                <form class="w-100 needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                        <div class="invalid-feedback">Message cannot be empty.</div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="col-12 col-md-6">
+            <div class="contact-info">
+                <p>📧 Email: <a href="mailto:jaidevkamboj4g@gmail.com">jaidevkamboj4g@gmail.com</a></p>
+                <p>I'd love to hear from you!</p>
+                <div class="social-links d-flex justify-content-center">
+                    <a href="https://www.linkedin.com/feed/" target="_blank" class="mx-3"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="mx-3"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="mx-3"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com" target="_blank" class="mx-3"><i class="fab fa-github"></i></a>
+                </div>
+                <!-- Download Resume Section -->
+                <div class="download-resume mt-3 text-center">
+                    <a href="/path/to/your/resume.pdf" download class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Click here to download resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Particle Animation & Dark Mode -->
+<script>
+    function createParticles() {
+        for (let i = 0; i < 20; i++) {  // Reduced particle count for performance
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            let size = Math.random() * 10 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.animationDuration = `${Math.random() * 7 + 5}s`;
+            document.body.appendChild(particle);
+        }
+    }
+    createParticles();
+    
+    // Dark Mode Toggle
+    $('#darkModeToggle').on('change', function () {
+        $('body').toggleClass('dark-mode');
+    });
+</script>
+
+</body>
+</html>
