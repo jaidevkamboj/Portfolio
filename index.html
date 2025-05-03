@@ -188,6 +188,16 @@
             color: #f26a25;
         }     
 
+html {
+  scroll-behavior: smooth;
+}
+
+#portfolio {
+  height: 600px;
+  
+}
+
+
     </style>
 </head>
 <body>
@@ -202,7 +212,7 @@
 <div class="hero">
     <h1>I'm <span class="fw-bold">Jaidev Kamboj</span></h1>
     <p>and this is my portfolio...</p>
-    <a href="#" class="btn btn-custom">Checkout Portfolio 👁️</a>
+    <a href="#portfolio" class="btn btn-custom">Checkout Portfolio 👁️</a>
 </div>
 
 <!-- About Me Section -->
@@ -264,10 +274,11 @@
         <!-- Ecommerce Project -->
         <div class="col-md-6">
             <div class="card project-card">
-                <img src="photo-2.png" alt="Ecommerce Project">
+                <img src="pinestrawamerica.webp" alt="Ecommerce Project">
                 <div class="card-body">
-                    <h5 class="project-title">Ecommerce Project</h5>
-                    <p class="tech-stack">HTML, CSS, JS, React, Redux, Firebase, Stripe, Firestore, Redux-thunk, Redux-saga, Heroku</p>
+                    <a class="btn btn-primary" href="https://pinestrawamerica.com/">
+                   Ecommerce Project</a>
+                    
                 </div>
             </div>
         </div>
@@ -275,34 +286,29 @@
         <!-- Facial Recognition Project -->
         <div class="col-md-6">
             <div class="card project-card">
-                <img src="photo-1.png" alt="Facial Recognition Project">
+                <img src="
+                laptop.webp" alt="Facial Recognition Project">
                 <div class="card-body">
-                    <h5 class="project-title">Facial Recognition Project</h5>
-                    <p class="tech-stack">HTML, CSS, JS, React, PostgreSQL, Heroku, ExpressJS, NodeJS</p>
+                    <a href="https://bitspro.org/" class="btn btn-primary">
+                    Facial Recognition Project</a>
+                    
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- External Project Link -->
-    <div class="row mt-4">
-        <div class="col-12 text-center">
-            <a href="https://www.theonlinemc" target="_blank" class="btn btn-primary">Visit Website</a>
-        </div>
-    </div>
+    
 </div>
 
 <!-- Miscellaneous Section -->
 <div class="container py-5">
-    <h2 class="projects-heading py-4">Miscellaneous</h2>
     <div class="row g-4">
         <!-- Background Generator -->
         <div class="col-md-6">
             <div class="card project-card">
-                <img src="photo-2.png" alt="Background Generator">
+                <img src="photo.webp" alt="Background Generator">
                 <div class="card-body">
-                    <h5 class="project-title">Background Generator</h5>
-                    <p class="tech-stack">HTML, CSS, JS</p>
+                    <a href="#" class="btn btn-primary">Background Generator</a>
                 </div>
             </div>
         </div>
@@ -310,19 +316,19 @@
         <!-- Quiz for HCE 4.0 -->
         <div class="col-md-6">
             <div class="card project-card">
-                <img src="photo-1.png" alt="Quiz for HCE 4.0">
+                <img src="rrts.webp" alt="Quiz for HCE 4.0">
                 <div class="card-body">
-                    <h5 class="project-title">Quiz for HCE 4.0</h5>
-                    <p class="tech-stack">HTML, CSS, JS</p>
+                    <a href="#" class="btn btn-primary">Quiz for HCE 4.0</a>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div id="portfolio" class="container">
     <div class="touch-container"></div>
-    <h2>Get in Touch</h2>
+    <h2 >Get in Touch</h2>
     <div class="orange-underline"></div>
 
     <div class="row">
@@ -359,17 +365,16 @@
         <!-- Contact Info Column -->
         <div class="col-12 col-md-6">
             <div class="contact-info">
-                <p>📧 Email: <a href="mailto:jaidevkamboj4g@gmail.com">jaidevkamboj4g@gmail.com</a></p>
-                <p>I'd love to hear from you!</p>
+                
                 <div class="social-links d-flex justify-content-center">
                     <a href="https://www.linkedin.com/feed/" target="_blank" class="mx-3"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://facebook.com" target="_blank" class="mx-3"><i class="fab fa-facebook"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="mx-3"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:jaidevkamboj4g@gmail.com" target="_blank" class="mx-3"> <i class="fas fa-envelope"></i></a>
+                    
                     <a href="https://github.com" target="_blank" class="mx-3"><i class="fab fa-github"></i></a>
                 </div>
                 <!-- Download Resume Section -->
                 <div class="download-resume mt-3 text-center">
-                    <a href="/path/to/your/resume.pdf" download class="btn btn-secondary">
+                    <a href="resume.pdf" download class="btn btn-secondary">
                         <i class="fas fa-download"></i> Click here to download resume
                     </a>
                 </div>
